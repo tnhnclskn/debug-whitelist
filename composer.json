@@ -1,0 +1,28 @@
+{
+    "name": "tnhnclskn/debug-whitelist",
+    "description": "Debug Page Whitelist for Laravel",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Tnhnclskn\\DebugWhitelist\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tunahan Caliskan",
+            "email": "mail@tunahancaliskan.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tnhnclskn\\DebugWhitelist\\ServiceProvider"
+            ],
+            "aliases": {
+                "DebugWhitelist": "Tnhnclskn\\DebugWhitelist\\Facade"
+            }
+        }
+    }
+}
