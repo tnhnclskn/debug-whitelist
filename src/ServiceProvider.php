@@ -19,7 +19,7 @@ class ServiceProvider extends BaseServiceProvider
             __DIR__ . '/../config/debug-whitelist.php' => config_path('debug-whitelist.php'),
         ], 'config');
 
-        // $this->mergeConfigFrom(__DIR__ . '/../config/debug-whitelist.php', 'debug-whitelist');
+        $this->mergeConfigFrom(__DIR__ . '/../config/debug-whitelist.php', 'debug-whitelist');
 
         if ($this->app['config']['debug-whitelist.ip_addresses']) {
             $this->app['debug-whitelist']->addIpAddresses($this->app['config']['debug-whitelist.ip_addresses']);
