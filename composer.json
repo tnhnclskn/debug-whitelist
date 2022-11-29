@@ -1,7 +1,8 @@
 {
     "name": "tnhnclskn/debug-whitelist",
-    "description": "Debug Page Whitelist for Laravel",
+    "description": "Debug Whitelist for Laravel",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Tnhnclskn\\DebugWhitelist\\": "src/"
