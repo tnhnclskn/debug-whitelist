@@ -8,11 +8,11 @@ class ServiceProvider extends BaseServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(Facade::class, function ($app) {
+        $this->app->singleton(DebugWhitelist::class, function ($app) {
             return new DebugWhitelist($app['config']['debug-whitelist']);
         });
 
-        $this->app->alias('debug-whitelist', Facade::class);
+        $this->app->alias('debug-whitelist', DebugWhitelist::class);
     }
 
     public function boot()
