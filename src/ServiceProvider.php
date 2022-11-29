@@ -8,11 +8,9 @@ class ServiceProvider extends BaseServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(DebugWhitelist::class, function ($app) {
+        $this->app->singleton('debug-whitelist', function ($app) {
             return new DebugWhitelist($app['config']['debug-whitelist']);
         });
-
-        $this->app->alias('debug-whitelist', DebugWhitelist::class);
     }
 
     public function boot()
@@ -21,7 +19,7 @@ class ServiceProvider extends BaseServiceProvider
             __DIR__ . '/../config/debug-whitelist.php' => config_path('debug-whitelist.php'),
         ], 'config');
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/debug-whitelist.php', 'debug-whitelist');
+        // $this->mergeConfigFrom(__DIR__ . '/../config/debug-whitelist.php', 'debug-whitelist');
 
         if ($this->app['config']['debug-whitelist.ip_addresses']) {
             $this->app['debug-whitelist']->addIpAddresses($this->app['config']['debug-whitelist.ip_addresses']);
